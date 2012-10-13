@@ -3,6 +3,7 @@
 
 class ShopController < ActionController::Base
   def index
-    render :text => "Dzień dobry! Sklep zaprasza!"
+    #render :text => "Dzień dobry! Sklep zaprasza!"
+    @prod = Product.all
   end
 end

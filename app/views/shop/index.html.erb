@@ -7,3 +7,8 @@
 <div style="clear:both;"></div>
 </div>
 <% end %>
+<hr>
+<p>Kategorie:</p>
+<% @cat.each do |c| %>
+<%= link_to c.name, c %>
+<% end %>

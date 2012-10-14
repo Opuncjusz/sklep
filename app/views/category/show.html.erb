@@ -1,0 +1,14 @@
+
+<h3>Kategoria <%= @c.name %></h3>
+
+<% if @p.length == 0 %>
+	<p>Brak przedmiotów w tej kategorii</p>
+<% else %>
+	<ul>Przedmioty w tej kategorii:
+	<% @p.each do |p| %>
+		<li><%= link_to p.name, p %></li>
+	<% end %>
+	</ul>
+<% end %>
+<%= link_to "<Wróć", root_path %>
+

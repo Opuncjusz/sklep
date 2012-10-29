@@ -1,13 +1,98 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+html {
+	font-family: Verdana;
+}
+div { border: 0px solid black; }
+
+div#main {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	overflow: hidden;
+}
+
+div#logo {
+	width: 250px;
+	height: 100px;
+	float: left;
+	background: url(/assets/logo.jpg) no-repeat left top;
+	margin-bottom: 50px;
+}
+
+div#container {
+	clear: both;
+}
+
+div#leftbar{
+	float: left;
+	width: 250px;
+	background: #8bc7cb;
+	
+}
+
+div#leftbar div{
+	width: 244px;
+	border: 1px solid black;
+	margin-top: 55px;
+	background: #43adc5;
+	padding: 2px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+div#leftbar h2{
+	font-size: 17px;
+	border-bottom: 1px solid black;
+	padding-bottom: 5px;
+	margin-top: 2px;
+	letter-spacing: 1px;
+}
+
+div#content{
+	float: right;
+	width: 700px;
+	background: #7ec347;
+	padding: 5px;
+}
+
+div#categories a{
+	display: block;
+	text-decoration: none;
+	margin-bottom: 3px;
+}
+
+div.product {
+	border: 1px solid black;
+	width: 300px;
+	margin-bottom: 20px;
+	padding: 7px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+div.product h3{
+	margin-top: 3px;
+}
+
+div#notice{
+	margin-bottom: 20px;
+	text-align: center;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid darkgreen;
+	background: lightgreen;
+	padding: 3px;
+	font-weight: bold;
+}
+
+div#alert, div#error{
+	margin-bottom: 20px;
+	text-align: center;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid darkred;
+	background: red;
+	padding: 3px;
+	font-weight: bold;
+}

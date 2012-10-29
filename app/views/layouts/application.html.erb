@@ -8,7 +8,39 @@
 </head>
 <body>
 
+<div id="main">
+<%= link_to content_tag("div", "", :id => "logo"), root_path %>
+<div id="container">
+<% if flash[:notice].to_s.length > 0 %>
+<div id="notice">
+	<div>
+		<%= flash[:notice] %>
+	</div>
+</div>
+<% end %>
+<% if flash[:alert].to_s.length > 0 %>
+<div id="alert">
+	<div>
+		<%= flash[:alert] %>
+	</div>
+</div>
+<% end %>
+<% if flash[:error].to_s.length > 0 %>
+<div id="alert">
+	<div>
+		<%= flash[:error] %>
+	</div>
+</div>
+<% end %>
+<div id="leftbar">
+<%= yield :sidebar %>
+</div>
+<div id="content">
 <%= yield %>
+</div>
+</div>
+</div>
+
 
 </body>
 </html>

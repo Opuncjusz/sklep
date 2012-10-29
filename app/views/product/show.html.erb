@@ -1,8 +1,26 @@
-<div style="border: 1px solid black; width: 300px; margin-bottom: 20px; padding: 10px;">
+<% content_for :sidebar do %>
+<%= render partial: "application/categories_sidebar" %>
+<%= render partial: "application/cart_sidebar" %>
+<% end %>
+
 <h3><%= @p.name %></h3>
 <p>Kategoria <%= link_to @p.category.name, @p.category %></p>
 <p><%= @p.description%></p>
 <p>Cena: <i><%= @p.price %> PLN</i></p>
-</div>
+
+<% if @quantity > 0 %>
+<p>W koszyku: <%= @quantity %> (<%= link_to "Szczegóły i zamówienie", cart_index_path %>)</p>
+<%= form_for @p do %>
+<%= submit_tag("Dodaj jeden") %>
+<% end %>
+<%= form_for @p, :method => :delete do %>
+<%= submit_tag("Usuń jeden") %>
+<% end %>
+<% else %>
+<%= form_for @p do %>
+<%= submit_tag("Dodaj do koszyka") %>
+<% end %>
+<% end %>
+<br>
 
 <%= link_to "<Wróć", root_path %>

@@ -1,0 +1,6 @@
+<div id="categories">
+<h2>Kategorie produktów</h2>
+<% Category.all.each do |c| %>
+<%= if category_path(c) == request.fullpath then c.name else link_to c.name, c end %>
+<% end %>
+</div>

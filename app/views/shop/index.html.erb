@@ -1,14 +1,19 @@
+<% content_for :sidebar do %>
+<%= render partial: "application/categories_sidebar" %>
+<%= render partial: "application/cart_sidebar" %>
+<% end %>
+
+
 <p>Dzień dobry! Sklep zaprasza!</p>
+<p>Najnowsze produkty:</p>
 <% @prod.each do |p| %>
-<div style="border: 1px solid black; width: 300px; margin-bottom: 20px; padding: 10px; padding-top: 0px">
+<div class="product">
 <h3><%= p.name %></h3>
 <div style="float: left">Cena: <i><%= p.price %> PLN</i></div>
 <div style="float: right;"><%= link_to "Więcej >", p %></div>
 <div style="clear:both;"></div>
 </div>
-<% end %>
-<hr>
-<p>Kategorie:</p>
-<% @cat.each do |c| %>
-<%= link_to c.name, c %>
-<% end %>
+<% end %> 
+  
+
+

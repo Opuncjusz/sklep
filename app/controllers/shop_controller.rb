@@ -1,10 +1,11 @@
 #!/bin/env ruby
 # encoding: utf-8
 
-class ShopController < ActionController::Base
+class ShopController < ApplicationController
+  
   def index
-    #render :text => "Dzień dobry! Sklep zaprasza!"
-    @prod = Product.all
-    @cat = Category.all
+    
+    @prod = Product.order(:created_at).limit(10)
+    
   end
 end

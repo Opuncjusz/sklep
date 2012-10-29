@@ -1,0 +1,19 @@
+<div id="cart">
+<h2>Mój koszyk</h2>
+
+<ul style="padding-left:15px;">
+<% shopping_cart.orderitems.each do |p| %>
+<li>
+<%= Product.find(p.product_id).name %>
+<%= if p.quantity > 1 then "- #{p.quantity} razy" end %>
+</li>
+<% end %>
+</ul>
+
+<% if shopping_cart.orderitems.all.count == 0 %>
+koszyk jest pusty
+<% else %>
+<%= link_to "Szczegóły i zamówienie", cart_index_path %>
+<% end %>
+
+</div>

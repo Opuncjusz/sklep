@@ -1,0 +1,35 @@
+<% content_for :sidebar do %>
+<% render :partial => "admin/admin_sidebar" %>
+<% end %>
+
+<table style="border-collapse: collapse;">
+<tr>
+<td width="200px">Produkt</td>
+<td width="100px">Cena</td>
+<td width="100px">Ilość</td>
+<td width="100px">Koszt</td>
+<td></td>
+</tr>
+
+<% price = 0 %>
+<% @items.each do |p| %>
+	<% product = Product.find(p.product_id) %>
+	<% price += product.price * p.quantity %>
+	<tr style="border-top: 1px dashed black; ">
+		<td><%= product.name %></td>
+		<td><%= product.price %>zł</td>
+		<td><%= p.quantity %></td>
+		<td><%= (p.quantity * product.price).round(2) %> zł</td>
+	</tr>
+
+<% end %>
+<tr>
+	<td colspan=4 style="text-align: center;"><b>Razem: <%= price.round(2)%> zł</b></td>
+</tr>
+</table>
+<div>
+<h4>Data i godzina złożenia zamówienia:</h4>
+<%= @order.updated_at %>
+<h4>Pełny adres:</h4>
+<pre><%= @order.full_address %></pre>	
+</div>

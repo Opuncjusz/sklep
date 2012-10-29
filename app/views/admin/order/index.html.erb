@@ -1,0 +1,22 @@
+<% content_for :sidebar do %>
+<% render :partial => "admin/admin_sidebar" %>
+<% end %>
+
+<h3>Przeglądanie zamówień</h3>
+
+<table>
+<tr>
+	<td>Data</td>
+	<td>Adres</td>
+	<td>Zobacz</td>
+</tr>
+<% @orders.each do |order| %>
+<tr>
+	<td><%= order.updated_at %></td>
+	<td><%= order.full_address %></td>
+	<td><%= link_to "szczegóły", admin_order_path(order) %>
+</tr>
+<% end %>
+</table>
+
+

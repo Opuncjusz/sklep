@@ -10,7 +10,8 @@ Sklep::Application.routes.draw do
   end
 
   root :to => "shop#index"
-  resources :product, :only => [:show, :update, :destroy]
+  
+  resources :product, :only => [:index, :show, :update, :destroy]
   resources :category, :only => [:show]
   resources :cart, :only => [:index, :new, :create]
 end

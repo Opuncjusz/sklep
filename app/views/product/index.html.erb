@@ -1,0 +1,29 @@
+<% content_for :sidebar do %>
+
+<%= render partial: "application/categories_sidebar" %>
+<%= render partial: "application/cart_sidebar" %>
+<% end %>
+
+
+<%= search_form_for @q, :url => "/product" do |f| %>
+  <%= f.label :name_cont, "Nazwa zawiera:" %>
+  <%= f.text_field :name_cont %><br>
+  <%= f.label :description_cont, "Opis zawiera:" %>
+  <%= f.text_field :description_cont %><br>
+  <%= f.label :price_gteq, "Cena od " %>
+  <%= f.text_field :price_gteq %>
+  <%= f.label :price_lteq, " do " %>
+  <%= f.text_field :price_lteq %>
+  
+  <%= f.submit %>
+<% end %>
+
+<% @results.each do |p| %>
+<div class="product">
+<h3><%= p.name %></h3>
+<div style="float: left">Cena: <i><%= p.price %> PLN</i></div>
+<div style="float: right;"><%= link_to "Więcej >", p %></div>
+<div style="clear:both;"></div>
+</div>
+<% end %> 
+  

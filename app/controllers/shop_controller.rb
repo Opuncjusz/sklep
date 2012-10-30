@@ -4,8 +4,6 @@
 class ShopController < ApplicationController
   
   def index
-    
     @prod = Product.order(:created_at).limit(10)
-    
   end
 end

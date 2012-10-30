@@ -3,7 +3,12 @@
 
 class ProductController < ApplicationController
   
-  def show  
+  def index
+    @q = Product.search(params[:q])
+    @results = @q.result(:distinct => true)
+  end
+  
+  def show
     @p = Product.find(params["id"])
     order_item = shopping_cart.orderitems.where(:product_id => params["id"])
     if order_item.length == 0

@@ -1,4 +1,7 @@
 <% content_for :sidebar do %>
+<div><h2>Wyszukiwarka</h2>
+<%= link_to "Znajdź produkt", product_index_path %>
+</div>
 <%= render partial: "application/categories_sidebar" %>
 <%= render partial: "application/cart_sidebar" %>
 <% end %>

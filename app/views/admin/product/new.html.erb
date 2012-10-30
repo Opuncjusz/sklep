@@ -1,0 +1,17 @@
+<% content_for :sidebar do %>
+<%= render :partial => "admin/admin_sidebar" %>
+<% end %>
+
+<h3>Dodaj produkt:</h3>
+<%= form_for [:admin, @prod], :url => "/admin/product" do |f| %>
+<%= label_tag :category_id, "Kategoria:" %>
+<%= f.select(:category_id, options_for_select(@categories)) %><br>
+<%= label_tag :name, "Nazwa:" %>
+<%= f.text_field :name %><br>
+<%= label_tag :description, "Opis:" %>
+<%= f.text_area :description %><br>
+<%= label_tag :price, "Cena:" %>
+<%= f.text_field :price %><br>
+<%= submit_tag("Dodaj nowy produkt") %>
+<% end %>
+	

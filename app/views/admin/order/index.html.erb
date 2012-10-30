@@ -4,14 +4,14 @@
 
 <h3>Przeglądanie zamówień</h3>
 
-<table>
+<table style="border-collapse: collapse;"
 <tr>
-	<td>Data</td>
-	<td>Adres</td>
+	<td width="280px">Data</td>
+	<td width="250px">Adres</td>
 	<td>Zobacz</td>
 </tr>
 <% @orders.each do |order| %>
-<tr>
+<tr style="border-top:1px dashed black;">
 	<td><%= order.updated_at %></td>
 	<td><%= order.full_address %></td>
 	<td><%= link_to "szczegóły", admin_order_path(order) %>

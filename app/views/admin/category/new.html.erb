@@ -1,0 +1,9 @@
+<% content_for :sidebar do %>
+<%= render :partial => "admin/admin_sidebar" %>
+<% end %>
+
+<h3>Dodaj kategorię:</h3>
+<%= form_for [:admin, @cat], :url => "/admin/category" do |f| %>
+<%= f.text_field :name %>
+<%= submit_tag("Dodaj kategorię") %>
+<% end %>

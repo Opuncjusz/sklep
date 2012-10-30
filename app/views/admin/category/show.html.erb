@@ -1,0 +1,21 @@
+<% content_for :sidebar do %>
+<%= render :partial => "admin/admin_sidebar" %>
+<% end %>
+
+<h3>Kategoria: <%= @category.name %></h3>
+
+<div>
+	<h4>Zmień nazwę:</h4>
+	<%= form_for [:admin, @category] do |f| %>
+	<%= f.text_field :name %>
+	<%= submit_tag("Zmień nazwę") %>
+	<% end %>
+	
+</div>
+
+<div>
+	<h4>Usuń kategorię:</h4>
+	<%= form_for [:admin, @category], :method => :delete do %>
+	<%= submit_tag("Usuń") %>
+	<% end %>
+</div>

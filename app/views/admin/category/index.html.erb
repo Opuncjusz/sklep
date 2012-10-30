@@ -1,0 +1,23 @@
+<% content_for :sidebar do %>
+<%= render :partial => "admin/admin_sidebar" %>
+<% end %>
+
+<h3>Kategorie produktów:</h3>
+
+<table style="border-collapse: collapse;">
+	<tr>
+		<td width="50px">Id</td>
+		<td width="200px">Nazwa</td>
+		<td width="150px">Produkty</td>
+		<td width="100px">Szczegóły</td>
+	</tr>
+	
+<% @categories.each do |cat| %>
+<tr style="border-top:1px dashed black;">
+	<td><%= cat.id %></td>
+	<td><%= cat.name %></td>
+	<td><%= Product.where(:category_id => cat.id).count %></td>
+	<td><%= link_to "szczegóły", admin_category_path(cat) %></td>
+</tr>
+<% end %>
+</table>
